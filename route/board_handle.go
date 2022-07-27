@@ -20,7 +20,10 @@ func HandleUserHistory(g *gin.Context) {
 			"code": -1,
 		})
 	} else {
-		g.JSON(http.StatusAccepted, ret)
+		g.JSON(http.StatusAccepted, gin.H{
+			"code": 0,
+			"data": ret,
+		})
 	}
 }
 
